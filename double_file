@@ -1,0 +1,40 @@
+a:  double D.1605;
+a:  double D.1604;
+a:  double D.1603;
+a:  double D.1602;
+a:  double D.1601;
+a:  D.1601 = (double) D.1600;
+a:  D.1602 = (double) f1;
+ast-build.cc:double ast_Node::get_dNum()
+ast-build.cc:dnum_Ast::dnum_Ast(double n)
+ast-build.cc:double dnum_Ast::get_dNum()
+ast-evaluate.cc:    double rf=0.0;
+ast-evaluate.cc:    double rf=0.0;
+ast-evaluate.cc:    double rf=0.0;
+ast.hh:    virtual double get_dNum();
+ast.hh:    double num;
+ast.hh:    dnum_Ast(double n);
+ast.hh:    double get_dNum();
+Binary file core matches
+evaluate.cc:eval_Result::eval_Result(double num, bb_Ptr bb, res_Type rt)
+evaluate.cc:double eval_Result::get_Float_Val()             { return float_res; }
+evaluate.cc:void  eval_Result::set_Float_Val(double n)      { float_res = n; }
+evaluate.hh:    double float_res;
+evaluate.hh:    eval_Result(double dnum, bb_Ptr bb, res_Type rt);
+evaluate.hh:	double get_Float_Val();
+evaluate.hh:    void  set_Float_Val(double n);
+parse.yy:    double dval;
+scan.ll:double      {    
+symtab-build.cc:double sym_Entry_for_Float_Var::get_Value2()                { return value;    }
+symtab-build.cc:void sym_Entry_for_Float_Var::set_Value(double num)        { value = num;    }
+symtab-build.cc:double sym_List::get_Float_Val (string name)
+symtab-build.cc:void sym_List::set_Float_Val (string name, double value)
+symtab.hh:    virtual void set_Value(double num) {}
+symtab.hh:    virtual double get_Value2() {}
+symtab.hh:    double value;	          
+symtab.hh:    void set_Value(double num);
+symtab.hh:    double get_Value2();
+symtab.hh:    void set_Float_Val (string name, double value);
+symtab.hh:    double get_Float_Val (string name);
+t3:  double D.2724;
+t3:  double D.2723;

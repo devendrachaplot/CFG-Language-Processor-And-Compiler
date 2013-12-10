@@ -1,0 +1,99 @@
+
+                                   cfglp : A CFG Language Processor
+                                   --------------------------------
+
+               .................................................................
+               About:
+               Implemented by Uday Khedker (http://www.cse.iitb.ac.in/~uday) for 
+               the courses cs302+cs306: Language Processors (theory and lab) at
+               IIT Bombay. Release date Jan 6, 2013. Copyrights reserved by Uday
+               Khedker. This implemenation has been made available purely for
+               academic purposes without any warranty of any kind.
+
+               A doxygen generated documentation can be found at 
+               http://www.cse.iitb.ac.in/~uday/cfglp
+               .................................................................
+
+
+    This is a language processor that 
+
+    - takes as input GCC tree-cfg (control flow graph) dumps and 
+    - either interprets them or compiles them into spim assembly based 
+      on a command line parameters. 
+
+    The complete functionality supported by cfglp is best described by the usage printed by it:
+
+
+    Usage: cfglp [options] [file]
+     Options:
+          -help     Show this help
+          -tokens   Show the tokens in file.toks (or out.toks)
+          -ast      Show abstract syntax trees in file.ast (or out.ast)
+          -symtab   Show the symbol table of declarations in file.sym (or out.sym)
+          -program  Show the complete program read by cfglp in file.prog (or out.prog)
+                    (-program option cannot be given with -tokens, -ast, or -symtab) 
+          -eval     Interpret the program and show a trace of the execution in file.eval (or out.eval)
+          -compile  Compile the program and generate spim code in file.spim (or out.spim)
+                    (-eval and -compile options are mutually exclusive)
+                    (-compile is the default option)
+          -lra      Do local register allocation to avoid redundant loads within a basic block
+          -icode    Compile the program and show the intermediate code in file.ic (or out.ic)
+                    (-eval and -icode options are mutually exclusive)
+          -d        Demo version. Use stdout for the outputs instead of files
+
+
+    At the moment cfglp accepts level 0 language that defines simple cfgs corresponding to 
+    programs that contain 
+
+    - only integer variables and numbers, 
+    - only assignment statements, no control flow, no function calls
+    - the right hand sides of the assignments can only be a scalar variable or a number
+    - the main function does not return any value.
+
+    Please see the files p1, p2, p3, and p4 for the examples of valid and invalid inputs.
+
+    The subsequent versions would enhance the input language incrementally as follows:
+
+    - Level 1: Allow floating point numbers and common arithmetic operations on the right hand
+               side. The expectation is that the temporary variables introduced by GCC are
+               eliminated and larger ASTs are created for right hand sides.
+    - Level 2: Allow control flow statements and evaluation of conditions.
+    - Level 3: Allow function calls (including recursion).
+    - Level 3: Allow data and procedure encapsulation supported by classes.
+
+   The cfglp embodies object oriented design and implementation. The implementation language is
+   C++. The main classes that constitute cfglp are:
+
+   - program, procedure, basic block, abstract syntax trees
+   - symbol table (persistent as well as volatile symbol table for scope analysis
+   - register and instruction descriptor
+   - intermediate code
+  
+   The methods of these classes have been divided into file names with a suffix that represent
+   the overall functionality eg. for ASTs, the classes are defined in ast.hh where as the methods
+   are implemented in the files ast-build.cc, ast-print.cc, ast-typecheck.cc, ast-evaluate.cc,
+   and ast-compile.cc.
+
+   This implementation has the following dependencies:
+
+   - It requires bison 2.7 (earlier versions do not support named attributes).
+   - It requires flex 2.5 or higher.
+   - It requires a contemporary g++ compiler.
+   
+  The dependencies for input and output are:
+  - It accepts cfg dumps produced by GCC-4.4.3 or later. GCC by default does not dump global
+    declarations so we need a dynamic plugin (provided separately) for program that contain 
+    global variables.
+  - The compiled assembly program can be executed on the spim simulator of MIPs.
+
+-------------------------------------------------------------------------------------------------- 
+Dr. Uday Khedker
+Professor
+Department of Computer Science & Engg.
+IIT Bombay, Powai, Mumbai 400 076, India.
+Email   : 	uday@cse.iitb.ac.in
+Homepage: 	http://www.cse.iitb.ac.in/~uday
+Phone   : 	
+Office - 	91 (22) 2572 2545 x 7717, 91 (22) 2576 7717 (Direct)
+Res.   - 	91 (22) 2572 2545 x 8717, 91 (22) 2576 8717 (Direct)
+

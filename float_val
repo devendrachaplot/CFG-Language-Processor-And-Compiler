@@ -1,0 +1,79 @@
+Binary file ./cfglp matches
+./float_val~:./parse.yy:    val_s = (val_t == int_Val)? "INT" : ((val_t == float_Val)? "FLOAT" : "VOID");
+./float_val~:./symtab-print.cc:    const string type_name = (type == int_Val)? "INT" : ((type == float_Val)? "FLOAT" : "VOID");
+./float_val~:./y.tab.c:    val_s = (val_t == int_Val)? "INT" : ((val_t == float_Val)? "FLOAT" : "VOID");
+./int_val~:./parse.yy:    val_s = (val_t == int_Val)? "INT" : ((val_t == float_Val)? "FLOAT" : "VOID");
+./int_val~:./symtab-print.cc:    const string type_name = (type == int_Val)? "INT" : ((type == float_Val)? "FLOAT" : "VOID");
+./int_val~:./y.tab.c:    val_s = (val_t == int_Val)? "INT" : ((val_t == float_Val)? "FLOAT" : "VOID");
+./parse.output:   14          | static_kw FLOAT ID ';'
+./parse.output:   15          | static_kw FLOAT ARTIFICIAL_VAR ';'
+./parse.output:   16          | static_kw FLOAT EXP_VAR ';'
+./parse.output:   39     | '(' FLOAT ')' Expr
+./parse.output:FLOAT (265) 14 15 16 39
+./parse.output:   14          | static_kw . FLOAT ID ';'
+./parse.output:   15          | static_kw . FLOAT ARTIFICIAL_VAR ';'
+./parse.output:   16          | static_kw . FLOAT EXP_VAR ';'
+./parse.output:    FLOAT   shift, and go to state 15
+./parse.output:   14 decl_Stmt: static_kw FLOAT . ID ';'
+./parse.output:   15          | static_kw FLOAT . ARTIFICIAL_VAR ';'
+./parse.output:   16          | static_kw FLOAT . EXP_VAR ';'
+./parse.output:   14 decl_Stmt: static_kw FLOAT ID . ';'
+./parse.output:   15 decl_Stmt: static_kw FLOAT ARTIFICIAL_VAR . ';'
+./parse.output:   16 decl_Stmt: static_kw FLOAT EXP_VAR . ';'
+./parse.output:   14 decl_Stmt: static_kw FLOAT ID ';' .
+./parse.output:   15 decl_Stmt: static_kw FLOAT ARTIFICIAL_VAR ';' .
+./parse.output:   16 decl_Stmt: static_kw FLOAT EXP_VAR ';' .
+./parse.output:   39     | '(' . FLOAT ')' Expr
+./parse.output:    FLOAT           shift, and go to state 60
+./parse.output:   39 Expr: '(' FLOAT . ')' Expr
+./parse.output:   39 Expr: '(' FLOAT ')' . Expr
+./parse.output:   39     | '(' FLOAT ')' Expr .
+./parse.tab.cc:  "ARTIFICIAL_VAR", "EXP_VAR", "INT", "FLOAT", "DOUBLE", "RETURN",
+./parse.tab.cc:    val_s = (val_t == int_Val)? "INT" : ((val_t == float_Val)? "FLOAT" : "VOID");
+./parse.tab.hh:     FLOAT = 265,
+Binary file ./parse.tab.o matches
+./parse.yy:%token INT FLOAT DOUBLE RETURN STATIC 
+./parse.yy:    | static_kw FLOAT ID[id] ';'
+./parse.yy:    | static_kw FLOAT ARTIFICIAL_VAR[id] ';'
+./parse.yy:    | static_kw FLOAT EXP_VAR[id] ';'
+./parse.yy:    | '(' FLOAT ')' Expr
+./parse.yy:    val_s = (val_t == int_Val)? "INT" : ((val_t == float_Val)? "FLOAT" : "VOID");
+./parse.yy~:%token INT FLOAT DOUBLE RETURN STATIC 
+./parse.yy~:    | static_kw FLOAT ID[id] ';'
+./parse.yy~:    | static_kw FLOAT ARTIFICIAL_VAR[id] ';'
+./parse.yy~:    | static_kw FLOAT EXP_VAR[id] ';'
+./parse.yy~:    | '(' FLOAT ')' Expr
+./parse.yy~:    val_s = (val_t == int_Val)? "FLOAT" : ((val_t == float_Val)? "FLOAT" : "VOID");
+./scan.cc:                 store_Token_Name("FLOAT");
+./scan.cc:                 return token::FLOAT; 
+./scan.ll:                 store_Token_Name("FLOAT");
+./scan.ll:                 return token::FLOAT; 
+./scan.ll~:                 store_Token_Name("FLOAT");
+./scan.ll~:                 return token::FLOAT; 
+Binary file ./scan.o matches
+./symtab-print.cc:    const string type_name = "FLOAT";
+./symtab-print.cc:    const string type_name = (type == int_Val)? "INT" : ((type == float_Val)? "FLOAT" : "VOID");
+./symtab-print.cc:    const string type_name = "FLOAT";
+./symtab-print.cc:    const string type_name = "FLOAT";
+./symtab-print.cc~:    const string type_name = "FLOAT";
+./symtab-print.cc~:    const string type_name = (type == int_Val)? "INT" : ((type == float_Val)? "FLOAT" : "VOID");
+./symtab-print.cc~:    const string type_name = "FLOAT";
+./symtab-print.cc~:    const string type_name = "FLOAT";
+Binary file ./symtab-print.o matches
+./t3_prog: Name: D Type: FLOAT Entity Type: VAR (No offset assigned yet)
+./t3_prog: Name: x Type: FLOAT Entity Type: VAR (No offset assigned yet)
+./t3_sym: Name: D Type: FLOAT Entity Type: VAR (No offset assigned yet)
+./t3_sym: Name: x Type: FLOAT Entity Type: VAR (No offset assigned yet)
+./t3toks:Line: 4 Token name:FLOAT	token code:265	lexeme: `float'
+./t3toks:Line: 8 Token name:FLOAT	token code:265	lexeme: `float'
+./t3toks:Line: 12 Token name:FLOAT	token code:265	lexeme: `float'
+./t3toks:Line: 13 Token name:FLOAT	token code:265	lexeme: `float'
+./t3toks:Line: 17 Token name:FLOAT	token code:265	lexeme: `float'
+./t3toks:Line: 20 Token name:FLOAT	token code:265	lexeme: `float'
+./t3toks:Line: 37 Token name:FLOAT	token code:265	lexeme: `float'
+./t4_prog: Name: D Type: FLOAT Entity Type: VAR (No offset assigned yet)
+./t4_prog: Name: x Type: FLOAT Entity Type: VAR (No offset assigned yet)
+./t4_sym: Name: D Type: FLOAT Entity Type: VAR (No offset assigned yet)
+./t4_sym: Name: x Type: FLOAT Entity Type: VAR (No offset assigned yet)
+./y.tab.c:    val_s = (val_t == int_Val)? "INT" : ((val_t == float_Val)? "FLOAT" : "VOID");
+./y.tab.c~:    val_s = (val_t == int_Val)? "FLOAT" : ((val_t == float_Val)? "FLOAT" : "VOID");

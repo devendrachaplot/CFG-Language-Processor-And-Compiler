@@ -1,0 +1,7 @@
+
+                         cfglp : A CFG Language Processor
+                         --------------------------------
+
+Please see the README file for the dependencies. After ensuring the dependencies,
+a simple make is sufficient to create the executable. Please see the Makefile for
+more details.
